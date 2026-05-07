@@ -2,7 +2,7 @@
 setlocal EnableExtensions
 chcp 65001 >nul
 
-cd /d %~dp0
+cd /d "%~dp0"
 
 echo.
 echo ========================================
@@ -16,7 +16,7 @@ echo.
 echo 如果浏览器没有自动打开，请看下面显示的 Local URL。
 echo.
 
-call "%~dp0quick_start_local.bat" %*
+call "%~dp0start_resume_bot.cmd" %*
 
 echo.
 echo 如果上面提示 Startup failed，请先打开 docs\TROUBLESHOOTING.md 查看排错说明。

@@ -73,6 +73,14 @@ Add python.exe to PATH
 双击：
 
 ```text
+start_resume_bot.cmd
+```
+
+这个入口最稳，窗口里会显示英文提示。
+
+如果你更喜欢中文文件名，也可以双击：
+
+```text
 启动求职助手.bat
 ```
 
