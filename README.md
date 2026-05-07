@@ -1,10 +1,16 @@
 # resume-bot
 
+[![Tests](https://github.com/kodokushi444-commits/resume-bot/actions/workflows/tests.yml/badge.svg)](https://github.com/kodokushi444-commits/resume-bot/actions/workflows/tests.yml)
+
 一个跑在你自己 Windows 电脑上的本地求职助手。
 
 它可以帮你上传简历、整理求职偏好、采集岗位列表、补全岗位 JD，并用 AI 给出更值得先看的岗位推荐。
 
 **使用resume-bot，你不需要会 Git，也不需要会写代码。**
+
+## 界面预览
+
+![resume-bot 本地网页界面](docs/assets/homepage.png)
 
 ## 它能做什么
 

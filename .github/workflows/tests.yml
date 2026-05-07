@@ -1,0 +1,36 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  unittest:
+    name: Python unittest
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Run regression tests
+        shell: pwsh
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          python -m unittest tests.test_llm tests.test_local_web tests.test_matching tests.test_pipeline_source_selection tests.test_pipeline_queue_import
