@@ -544,6 +544,10 @@ class LocalWebTests(unittest.TestCase):
         self.assertEqual(payload["ok"], True)
         self.assertEqual(payload["jobs_count"], 15)
 
+    def test_parse_subprocess_json_output_reports_non_json_stderr(self) -> None:
+        with self.assertRaisesRegex(ValueError, "BOSS 采集子程序启动失败"):
+            _parse_subprocess_json_output("Traceback: ModuleNotFoundError: No module named 'websocket'")
+
     def test_build_boss_workbench_capture_defaults_prefers_recent_run(self) -> None:
         settings = UserSettings(
             user_id="me",

@@ -1219,17 +1219,24 @@ class ResumeBotPipeline:
     def _parse_subprocess_json_output(self, output_text: str) -> dict:
         text = str(output_text or "").strip()
         if not text:
-            raise ValueError("Subprocess returned empty output.")
+            raise ValueError("BOSS 补抓子程序没有返回结果。请重新启动 start_resume_bot.cmd 后再试。")
         try:
             payload = json.loads(text)
         except Exception:
             start = text.find("{")
             end = text.rfind("}")
             if start < 0 or end <= start:
-                raise ValueError("Subprocess output did not contain JSON.") from None
+                excerpt = " ".join(text.split())[:500]
+                detail = f" 原始输出：{excerpt}" if excerpt else ""
+                raise ValueError(
+                    "BOSS 补抓子程序启动失败，网页拿不到可解析结果。"
+                    "常见原因是依赖没有安装完整，或登录浏览器没有正常连上。"
+                    "请先重新运行 start_resume_bot.cmd；如果仍失败，把这个错误截图发给维护者。"
+                    + detail
+                ) from None
             payload = json.loads(text[start : end + 1])
         if not isinstance(payload, dict):
-            raise ValueError("Subprocess JSON payload must be an object.")
+            raise ValueError("BOSS 补抓子程序返回格式不正确。请重新启动后再试。")
         return payload
 
     def _run_boss_cdp_detail_probe(
