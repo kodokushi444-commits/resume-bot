@@ -989,8 +989,10 @@ INDEX_HTML = """<!doctype html>
       --muted: #677b8f;
       --line: rgba(64, 78, 91, 0.14);
       --accent: #404e5b;
+      --accent-contrast: #fff;
       --accent-soft: rgba(143, 160, 184, 0.24);
       --accent-2: #677b8f;
+      --accent-2-contrast: #fff;
       --accent-2-soft: rgba(204, 201, 198, 0.42);
       --danger: #b45353;
       --theme-warn: #948f8c;
@@ -1003,26 +1005,62 @@ INDEX_HTML = """<!doctype html>
       --muted: #5e6b49;
       --line: rgba(57, 107, 141, 0.15);
       --accent: #396b8d;
+      --accent-contrast: #fff;
       --accent-soft: rgba(89, 157, 181, 0.20);
       --accent-2: #5e6b49;
+      --accent-2-contrast: #fff;
       --accent-2-soft: rgba(176, 181, 127, 0.30);
       --danger: #a45c54;
       --theme-warn: #b0b57f;
       --theme-shadow: 0 18px 48px rgba(57, 107, 141, 0.11);
     }
-    body[data-theme="pastel"] {
-      --bg: #f8f7f7;
-      --panel: rgba(255, 255, 255, 0.93);
-      --ink: #27313a;
-      --muted: #5d6e7d;
-      --line: rgba(93, 110, 125, 0.14);
-      --accent: #5d6e7d;
-      --accent-soft: rgba(119, 151, 178, 0.20);
-      --accent-2: #db888b;
-      --accent-2-soft: rgba(219, 136, 139, 0.18);
-      --danger: #b85f67;
-      --theme-warn: #a5aca5;
-      --theme-shadow: 0 18px 48px rgba(93, 110, 125, 0.10);
+    body[data-theme="forest"] {
+      --bg: #fef9de;
+      --panel: rgba(255, 255, 255, 0.92);
+      --ink: #242f1a;
+      --muted: #556136;
+      --line: rgba(36, 47, 26, 0.16);
+      --accent: #556136;
+      --accent-contrast: #fff;
+      --accent-soft: rgba(85, 97, 54, 0.18);
+      --accent-2: #b2622c;
+      --accent-2-contrast: #fff;
+      --accent-2-soft: rgba(214, 151, 91, 0.22);
+      --danger: #9d3b24;
+      --theme-warn: #d6975b;
+      --theme-shadow: 0 18px 48px rgba(36, 47, 26, 0.12);
+    }
+    body[data-theme="sorbet"] {
+      --bg: #fbf7ff;
+      --panel: rgba(255, 255, 255, 0.94);
+      --ink: #394158;
+      --muted: #667f97;
+      --line: rgba(154, 203, 251, 0.34);
+      --accent: #c5abd3;
+      --accent-contrast: #2f2938;
+      --accent-soft: rgba(197, 171, 211, 0.28);
+      --accent-2: #fca7c4;
+      --accent-2-contrast: #3b2b34;
+      --accent-2-soft: rgba(182, 219, 251, 0.34);
+      --danger: #c95678;
+      --theme-warn: #fdc2d7;
+      --theme-shadow: 0 18px 48px rgba(80, 92, 140, 0.11);
+    }
+    body[data-theme="sunrise"] {
+      --bg: #9fe7f5;
+      --panel: rgba(255, 255, 255, 0.94);
+      --ink: #053f5c;
+      --muted: #428ebd;
+      --line: rgba(5, 63, 92, 0.18);
+      --accent: #053f5c;
+      --accent-contrast: #fff;
+      --accent-soft: rgba(66, 142, 189, 0.18);
+      --accent-2: #f27f0c;
+      --accent-2-contrast: #053f5c;
+      --accent-2-soft: rgba(247, 173, 25, 0.24);
+      --danger: #b74f12;
+      --theme-warn: #f7ad19;
+      --theme-shadow: 0 18px 48px rgba(5, 63, 92, 0.13);
     }
     :root {
       --bs-body-bg: var(--bg);
@@ -1125,14 +1163,14 @@ INDEX_HTML = """<!doctype html>
     }
     .nav-button.is-active {
       background: var(--accent);
-      color: #fff;
+      color: var(--accent-contrast);
       border-color: var(--accent);
     }
     .primary,
     .btn-primary {
       background: var(--accent);
       border-color: var(--accent);
-      color: #fff;
+      color: var(--accent-contrast);
     }
     .secondary,
     .btn-outline-secondary {
@@ -1144,7 +1182,7 @@ INDEX_HTML = """<!doctype html>
     .btn-success {
       background: var(--accent-2);
       border-color: var(--accent-2);
-      color: #fff;
+      color: var(--accent-2-contrast);
     }
     .ghost,
     .btn-light {
@@ -1353,7 +1391,7 @@ INDEX_HTML = """<!doctype html>
     .filter-chip.is-active {
       border-color: var(--accent);
       background: var(--accent);
-      color: #fff;
+      color: var(--accent-contrast);
     }
     .boss-results-grid,
     .review-list {
@@ -1377,7 +1415,7 @@ INDEX_HTML = """<!doctype html>
       padding: 0;
       border-radius: 50%;
       background: var(--accent);
-      color: #fff;
+      color: var(--accent-contrast);
       border: 1px solid rgba(255, 255, 255, 0.55);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
     }
@@ -1799,7 +1837,9 @@ INDEX_HTML = """<!doctype html>
     const themeCycle = [
       { id: "sea", label: "海", name: "海的守望" },
       { id: "tuning", label: "潮", name: "潮风调音" },
-      { id: "pastel", label: "柔", name: "柔和甜风" },
+      { id: "forest", label: "森", name: "森林暖金" },
+      { id: "sorbet", label: "莓", name: "云莓晴空" },
+      { id: "sunrise", label: "橙", name: "橙海晴蓝" },
     ];
 
     function applyTheme(themeId, options = {}) {
