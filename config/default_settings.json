@@ -1,0 +1,50 @@
+{
+  "preferred_roles": [
+    "运营",
+    "内容运营",
+    "用户运营",
+    "用户增长",
+    "新媒体运营",
+    "活动运营",
+    "社区运营",
+    "电商运营"
+  ],
+  "avoided_roles": [
+    "开发",
+    "测试",
+    "算法",
+    "设计",
+    "法务",
+    "财务",
+    "医学",
+    "硬件"
+  ],
+  "preferred_cities": [],
+  "excluded_cities": [],
+  "preferred_company_stages": [],
+  "excluded_keywords": [
+    "销售",
+    "电话销售",
+    "客服",
+    "地推"
+  ],
+  "preferred_keywords": [],
+  "company_watchlist": [],
+  "job_types": [
+    "校招",
+    "社招"
+  ],
+  "campus_role_mode": "full_time",
+  "salary_min": 0,
+  "salary_max": 0,
+  "accept_unspecified_salary": true,
+  "max_degree_requirement": "",
+  "history_backfill_limit": 10,
+  "push_time": "09:00",
+  "notify_when_empty": true,
+  "allow_repush_when_updated": true,
+  "max_items_per_push": 20,
+  "skip_unknown_city_when_city_filtered": true,
+  "feishu_receive_id": "",
+  "feishu_receive_id_type": "open_id"
+}

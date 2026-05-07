@@ -1,0 +1,86 @@
+{
+  "sources": [
+    {
+      "name": "nowcoder_direct",
+      "type": "nowcoder-direct",
+      "enabled": true,
+      "seed_urls": [
+        "https://www.nowcoder.com/jobs/recommend/campus"
+      ],
+      "max_queries": 6,
+      "max_seed_pages": 1,
+      "max_detail_pages": 40,
+      "request_timeout_sec": 20,
+      "throttle_seconds": 1.6,
+      "max_consecutive_seed_anomalies": 2,
+      "max_consecutive_detail_anomalies": 2
+    },
+    {
+      "name": "nowcoder_schedule",
+      "type": "nowcoder-schedule",
+      "enabled": true,
+      "seed_urls": [
+        "https://mnowpick.nowcoder.com/jobs/school/schedule"
+      ],
+      "max_schedule_pages": 1,
+      "max_enterprises": 20,
+      "max_official_pages_per_enterprise": 8,
+      "request_timeout_sec": 20,
+      "throttle_seconds": 1.6
+    },
+    {
+      "name": "nowcoder_tavily",
+      "type": "tavily",
+      "enabled": false,
+      "domains": [
+        "nowcoder.com"
+      ],
+      "query_templates": [
+        "{intent} {role} site:nowcoder.com/jobs/detail",
+        "{intent} {role} 牛客"
+      ],
+      "max_results_per_query": 8
+    },
+    {
+      "name": "boss_cli",
+      "type": "boss-cli",
+      "enabled": false,
+      "allow_browser_fallback": false,
+      "recommend_pages": 1,
+      "max_queries": 4,
+      "max_cards_per_query": 6,
+      "max_detail_pages": 12
+    },
+    {
+      "name": "boss_tavily",
+      "type": "tavily",
+      "enabled": false,
+      "domains": [
+        "zhipin.com"
+      ],
+      "query_templates": [
+        "{intent} {role} BOSS直聘",
+        "{intent} {role} zhipin"
+      ],
+      "max_results_per_query": 6
+    },
+    {
+      "name": "boss_browser",
+      "type": "boss-browser",
+      "enabled": false,
+      "base_url": "https://www.zhipin.com/web/geek/jobs",
+      "max_queries": 3,
+      "max_cards_per_query": 4,
+      "max_detail_pages": 6,
+      "timeout_ms": 25000,
+      "headless": false,
+      "prefer_cdp": true,
+      "cdp_port": 9222
+    },
+    {
+      "name": "company_watchlist",
+      "type": "company-watchlist",
+      "enabled": true
+    }
+  ]
+}

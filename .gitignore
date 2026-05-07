@@ -1,0 +1,59 @@
+# Secrets and private local configuration
+.env
+.env.*
+!.env.example
+*.local.json
+
+# Runtime data, browser state, caches, and generated artifacts
+data/
+.artifacts/
+output/
+test-results/
+.playwright-cli/
+
+# Python environments and caches
+.venv/
+.venv.stale/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local databases, logs, and temporary files
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.tmp
+*.bak
+*.bak-*
+
+# Private project memory / handoff documents
+SOUL.md
+MEMORY.md
+PROJECT_STATE.md
+ENGINEERING_REVIEW.md
+docs/M8_PRD.md
+docs/ARCHITECTURE.md
+docs/LOCAL_WEB.md
+
+# Old private/cloud deployment notes not intended for the public beginner release
+docs/DEPLOYMENT.md
+docs/BOSS_BROWSER.md
+install_to_openclaw_workspace.sh
+quick_install_openclaw.sh
+scripts/boss_cloud_*
+scripts/*_headed.sh
+scripts/resume_bot_xvfb.sh
+scripts/run_daily_resume_digest.sh
+skills/
+tests/test_boss_browser_probe.py
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
